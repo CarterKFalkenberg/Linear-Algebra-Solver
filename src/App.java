@@ -20,7 +20,7 @@ public class App {
             System.out.println("Invalid. Please try again");
             rowStr = scan.nextLine();
         }
-        
+
         // get col #
         String colStr;
         System.out.println("How many columns would you like?. Minimum: " + min + ", Maximum: " + max);
@@ -39,7 +39,7 @@ public class App {
     }
 
 
-    // determines whether a string is a number
+    // determines whether a string is a valid entry for row # or col #
     public static boolean validRowCol(String str, int min, int max){
         if (str == null){
             return false;
