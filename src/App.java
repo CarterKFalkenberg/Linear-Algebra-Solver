@@ -20,6 +20,7 @@ public class App {
             System.out.println("Invalid. Please try again");
             rowStr = scan.nextLine();
         }
+        rows = Integer.parseInt(rowStr);
 
         // get col #
         String colStr;
@@ -29,8 +30,22 @@ public class App {
             System.out.println("Invalid. Please try again");
             colStr = scan.nextLine();
         }
+        cols = Integer.parseInt(colStr);
 
-        // get contents of the matrix, row by row
+        /*
+        * GET THE CONTENTS OF THE MATRIX
+        */
+
+        // row by row
+        for (int i = 0; i < rows; i++){
+
+        }
+
+
+
+        /*
+        * REDUCE AND DISPLAY THE MATRIX
+        */
 
         // display reduced matrix
 
