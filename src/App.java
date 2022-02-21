@@ -37,8 +37,9 @@ public class App {
         */
 
         // row by row
+        System.out.println("Enter each row of the matrix. Separate each number by a space. \n Only enter decimals, not fractions!");
         for (int i = 0; i < rows; i++){
-
+            
         }
 
 
