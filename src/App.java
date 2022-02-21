@@ -16,7 +16,7 @@ public class App {
         String rowStr;
         System.out.println("How many rows would you like?. Minimum: " + min + ", Maximum: " + max);
         rowStr = scan.nextLine();
-        while (!validRowCol(rowStr, min, max)){
+        while (!validRowColNum(rowStr, min, max)){
             System.out.println("Invalid. Please try again");
             rowStr = scan.nextLine();
         }
@@ -26,7 +26,7 @@ public class App {
         String colStr;
         System.out.println("How many columns would you like?. Minimum: " + min + ", Maximum: " + max);
         colStr = scan.nextLine();
-        while (!validRowCol(colStr, min, max)){
+        while (!validRowColNum(colStr, min, max)){
             System.out.println("Invalid. Please try again");
             colStr = scan.nextLine();
         }
@@ -40,6 +40,20 @@ public class App {
         System.out.println("Enter each row of the matrix. Separate each number by a space. \n Only enter decimals, not fractions!");
         for (int i = 0; i < rows; i++){
             
+            // for now, we will use while true
+            while (true){
+
+            // get input from user
+            String userRow = scan.nextLine();
+
+            // if valid input:
+            
+                // send information to Matrix.java
+                break;
+            // else try again, but do not go to next i/row in the for loop
+                // therefore, we must have a separate loop that determines when to go to the next i/row
+            }
+
         }
 
 
@@ -56,7 +70,7 @@ public class App {
 
 
     // determines whether a string is a valid entry for row # or col #
-    public static boolean validRowCol(String str, int min, int max){
+    public static boolean validRowColNum(String str, int min, int max){
         if (str == null){
             return false;
         }
