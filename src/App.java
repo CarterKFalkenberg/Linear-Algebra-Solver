@@ -3,6 +3,10 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
 
+        String test = "";
+        test.split("\s+");
+
+
         int min = 1;
         int max = 10;
         int rows, cols;
@@ -41,18 +45,21 @@ public class App {
         for (int i = 0; i < rows; i++){
             
             // for now, we will use while true
-            while (true){
+            String userRow = "";
+            do{
+                
+                // get input from user
+                userRow = scan.nextLine();
 
-            // get input from user
-            String userRow = scan.nextLine();
-
-            // if valid input:
-            
-                // send information to Matrix.java
-                break;
-            // else try again, but do not go to next i/row in the for loop
-                // therefore, we must have a separate loop that determines when to go to the next i/row
-            }
+                // if valid input:
+                if (validRow(userRow, rows, cols)){
+                    // send information to Matrix.java
+                }
+                else {
+                    // invalid entry
+                    System.out.println("Invalid entry. Please try again");
+                }
+            } while(!validRow(userRow, rows, cols));
 
         }
 
@@ -82,6 +89,32 @@ public class App {
         } catch (NumberFormatException nfe){
             return false;
         }
+        return true;
+    }
+
+    // determines whether a string is a valid entry for a row in the matrix
+    public static boolean validRow(String str, int rows, int cols){
+        
+        // immediate indicator as to whether string is valid
+        if (str.length() < (cols * 2) - 1){
+            return false;
+        }
+
+        // split each entry by a space. The # of entries should be the same as the # of cols
+        String[] entries = str.split("\s+");
+        if (entries.length != cols){
+            return false;
+        }
+
+        // make sure each entry is a valid numer
+        for (String entry : entries){
+            try{
+                double i = Double.parseDouble(entry);
+            } catch(NumberFormatException e){
+                return false;
+            }
+        }
+
         return true;
     }
 }
