@@ -36,6 +36,9 @@ public class App {
         }
         cols = Integer.parseInt(colStr);
 
+        // initialize matrix
+        Matrix matrix = new Matrix(rows, cols);
+
         /*
         * GET THE CONTENTS OF THE MATRIX
         */
@@ -53,14 +56,15 @@ public class App {
 
                 // if valid input:
                 if (validRow(userRow, rows, cols)){
-                    // send information to Matrix.java
+                    // SEND INFORMATION TO MATRIX.JAVA
+                    // TO BE DONE NEXT
                 }
                 else {
                     // invalid entry
                     System.out.println("Invalid entry. Please try again");
                 }
             } while(!validRow(userRow, rows, cols));
-
+            matrix.setRow(i+1, userRow);
         }
 
 
