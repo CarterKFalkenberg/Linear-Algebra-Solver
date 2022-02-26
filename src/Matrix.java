@@ -64,6 +64,13 @@ public class Matrix {
       }
       
       // Scale r such that the pivot = 1 (i.e. the first non-zero element is 1)
+      if (this.matrix[ri][ci] != 1){
+        double scale = 1.0/this.matrix[ri][ci];
+        for (int i = 0; i < cols; i++){
+          this.matrix[ri][i] *= scale;
+        }
+      }
+      break;
       // Add all non-pivot rows with a scaled r such that their element in column c = 0
       // Go to start of loop again with r++ and c++
     }
