@@ -25,6 +25,45 @@ public class Matrix {
 
   // method(s) to reduce the matrix
   public void reduce(){
+    
+    // start at ri = 0, ci = 0 (r = row INDEX, c = column INDEX)
+    int ri = 0;
+    int ci = 0;
+    // loop while c<cols AND r<rows
+    while (ci < cols && ri < rows){
+      // 1. find first nonzero element in c such that row >= r
+      int currRow = ri;
+      int pivotRowIndex;
+      while (currRow < rows && this.matrix[currRow][ci] == 0){
+        currRow++;
+      }
+      if (currRow < rows){
+        pivotRowIndex = currRow;
+      } else{
+
+        // a. if none, check rows < r
+        currRow = ri-1;
+        while (currRow > -1 && this.matrix[currRow][ci] == 0){
+          currRow--;
+        }
+        if (currRow > -1){
+          pivotRowIndex = currRow;
+        } else{
+
+          // b. if still none, go to start of loop again with c++ 
+          ci++;
+          continue;
+        }
+      }
+      System.out.println("PIVOT ROW IS " + (pivotRowIndex + 1));
+      break;  
+      // Interchange rows if neccessary (only if the nonzero element is not in row r)
+      // Scale r such that the pivot = 1 (i.e. the first non-zero element is 1)
+      // Add all non-pivot rows with a scaled r such that their element in column c = 0
+      // Go to start of loop again with r++ and c++
+    }
+
+
 
   }
 

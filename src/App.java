@@ -67,14 +67,18 @@ public class App {
             matrix.setRow(i+1, userRow);
         }
 
-
+        // show the user the matrix
+        System.out.println("\nOriginal matirx:");
+        System.out.println(matrix);
 
         /*
         * REDUCE AND DISPLAY THE MATRIX
         */
+        matrix.reduce();
 
         // display reduced matrix
-
+        System.out.println("Reduced matrix:");
+        System.out.println(matrix);
 
         scan.close();
     }
