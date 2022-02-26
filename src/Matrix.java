@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Matrix {
   
   private double[][] matrix;
@@ -70,9 +72,23 @@ public class Matrix {
           this.matrix[ri][i] *= scale;
         }
       }
-      break;
+
       // Add all non-pivot rows with a scaled r such that their element in column c = 0
-      // Go to start of loop again with r++ and c++
+      ArrayList<Integer> rowsToBeScaled = new ArrayList<Integer>(); //stores INDEXES of rows that need to be scaled
+      for (int i = 0; i < rows; i++){
+        if (i == ri){
+          continue;
+        }
+        if (this.matrix[i][ci] != 0){
+          rowsToBeScaled.add(i);
+        }
+      }
+
+      break;
+
+      // Go to start of loop again with ri++ and ci++
+      //ri++;
+      //ci++;
     }
 
 
