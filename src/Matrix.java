@@ -55,9 +55,14 @@ public class Matrix {
           continue;
         }
       }
-      System.out.println("PIVOT ROW IS " + (pivotRowIndex + 1));
-      break;  
+
       // Interchange rows if neccessary (only if the nonzero element is not in row r)
+      if (pivotRowIndex != ri){
+        double[] temp = this.matrix[ri];
+        this.matrix[ri] = this.matrix[pivotRowIndex];
+        this.matrix[pivotRowIndex] = temp;
+      }
+      
       // Scale r such that the pivot = 1 (i.e. the first non-zero element is 1)
       // Add all non-pivot rows with a scaled r such that their element in column c = 0
       // Go to start of loop again with r++ and c++
