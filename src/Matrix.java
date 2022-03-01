@@ -25,11 +25,8 @@ public class Matrix {
     }
   } 
 
-  // method(s) to reduce the matrix
-
-  // NEED TO HAVE AN IN DEPTH PRINTING SYSTEM SAYING WHAT IS BEING DONE AT EVERY SINGLE STEP TO DEBUG
-  // DOES NOT WORK WITH SIMPLE 3x3 123,456,789 MATRIX...
-
+  // puts the matrix into reduced row echelon form
+  // TODO: Write better detailed notes, waiting for the user to confirm to go to the next step
   public void reduce(){
     // start at ri = 0, ci = 0 (r = row INDEX, c = column INDEX)
     int ri = 0;
@@ -134,10 +131,6 @@ public class Matrix {
 
   // takes a double and returns a double rounded to 2 decimal places
   public double round(double num){
-    System.out.print(num + " is becoming ");
-    num *= 100;
-    num = Math.round(num);
-    System.out.println((int)num/100.0);
-    return (int)(num)/100.0;
+    return (int)(Math.round(num*100))/100.0;
   }
 }
