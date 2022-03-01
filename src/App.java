@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
 
+        System.out.println((int)1.9);
+        
         String test = "";
         test.split("\s+");
 
