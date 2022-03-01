@@ -133,18 +133,11 @@ public class Matrix {
   }
 
   // takes a double and returns a double rounded to 2 decimal places
-  // CURRENTLY ISSUES
   public double round(double num){
     System.out.print(num + " is becoming ");
     num *= 100;
-    if ((int)(num + .5) > (int)num){
-      num += 1;
-    }
+    num = Math.round(num);
     System.out.println((int)num/100.0);
     return (int)(num)/100.0;
-    
   }
-
-  
-
 }
