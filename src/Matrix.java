@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+
 public class Matrix {
   
   private double[][] matrix;
@@ -26,7 +27,6 @@ public class Matrix {
   } 
 
   // puts the matrix into reduced row echelon form
-  // TODO: Write better detailed notes, waiting for the user to confirm to go to the next step
   public void reduce(){
     // start at ri = 0, ci = 0 (r = row INDEX, c = column INDEX)
     int ri = 0;

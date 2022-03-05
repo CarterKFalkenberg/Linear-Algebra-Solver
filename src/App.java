@@ -3,12 +3,10 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        System.out.println((int)1.9);
+        // initialize JFrame
+        MyFrame frame = new MyFrame();
         
-        String test = "";
-        test.split("\s+");
-
-
+        // initialize variables to store user input
         int min = 1;
         int max = 10;
         int rows, cols;
@@ -119,7 +117,7 @@ public class App {
         // make sure each entry is a valid numer
         for (String entry : entries){
             try{
-                double i = Double.parseDouble(entry);
+                Double.parseDouble(entry);
             } catch(NumberFormatException e){
                 return false;
             }
