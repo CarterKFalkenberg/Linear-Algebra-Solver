@@ -33,7 +33,6 @@ public class Matrix {
     int ci = 0;
     // loop while c<cols AND r<rows
     while (ci < cols && ri < rows){
-      System.out.println(this);
       // 1. find first nonzero element in c such that row >= r
       int currRow = ri;
       int pivotRowIndex;
@@ -45,7 +44,7 @@ public class Matrix {
       } else{
 
         // a. if none, go to start of loop again with c++ 
-        System.out.println("COLUMN " + (ci+1) + " DOES NOT HAVE A PIVOT. INCREASING CI");
+        System.out.println("COLUMN " + (ci+1) + " DOES NOT HAVE A PIVOT.");
         ci++;
         continue;
         
@@ -90,11 +89,15 @@ public class Matrix {
 
       // FOR TESTING PURPOSES ONLY
         String testStr = "ROWS ";
+        boolean printTestStr = false;
         for (int index : rowsToBeScaled){
           testStr += (index+1) + " ";
+          printTestStr = true;
         }
         testStr += "NEED TO BE SCALED";
-        System.out.println(testStr);
+        if (printTestStr){
+          System.out.println(testStr);
+        }
       // END OF TESTING PURPOSES ONLY BLOCK
 
       for (int index : rowsToBeScaled){
